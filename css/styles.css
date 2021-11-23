@@ -664,7 +664,7 @@ img {
 	border-radius: 4px;
 	cursor: pointer;
 	transition: border-color var(--transition-time) var(--transition-function);
-	transition: fill var(--timing-function) var(--transition-function);
+	transition: fill var(--transition-time) var(--transition-function);
 }
 
 .form-field-input {
