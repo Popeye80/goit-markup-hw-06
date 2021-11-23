@@ -745,8 +745,8 @@ img {
 	margin-bottom: 30px;
 }
 
-.checkbox-label:focus ~ .checkbox-label__icon,
-.checkbox-label:hover ~ .checkbox-label__icon {
+.checkbox-label:focus ~ .checkbox-label-icon,
+.checkbox-label:hover ~ .checkbox-label-icon {
 	transition-duration: var(--transition-time);
 	transition-timing-function: var(--transition-function);
 	transition-property: fill;
@@ -764,11 +764,11 @@ img {
 	clip: rect(0 0 0 0);
 }
 
-.checkbox-label-input:checked + .checkbox-label__icon,
-.checkbox-label-input:hover + .checkbox-label__icon,
-.checkbox-label-input:focus + .checkbox-label__icon {
+.checkbox-label-input:checked + .checkbox-label-icon,
+.checkbox-label-input:hover + .checkbox-label-icon,
+.checkbox-label-input:focus + .checkbox-label-icon {
 	border-radius: 2px;
-	background-image: url("../img/check.svg");
+	background-image: url("../images/check.svg");
 	background-size: contain;
 	background-color: var(--back-ground-color);
 	fill: var(--back-ground-color);
@@ -782,7 +782,14 @@ img {
 	transition: fill var(--timing-function) var(--transition-function);
 	transition: background-color var(--transition-time) var(--transition-function);
 }
+.checkbox-label-text {
+	color: var(--light-text-color);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.71;
 
+	letter-spacing: 0.03em;
+}
 .checkbox-label-link {
 	color: var(--back-ground-color);
 }
@@ -796,13 +803,13 @@ img {
 	position: absolute;
 	top: 8px;
 	right: 8px;
-	transition: fill var(--timing-function) var(--transition-function);
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	box-sizing: border-box;
 	background-color: var(--secondary-text-color);
+	transition: fill var(--timing-function) var(--transition-function);
 }
 
 .backdrop-btn-close:hover,
@@ -811,8 +818,6 @@ img {
 }
 
 .form-modal-btn-submit {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 	justify-content: center;
 	align-items: center;
