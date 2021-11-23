@@ -663,9 +663,8 @@ img {
 	box-sizing: border-box;
 	border-radius: 4px;
 	cursor: pointer;
-	transition-duration: var(--transition-time);
-	transition-timing-function: var(--transition-function);
-	transition-property: border-color;
+	transition: border-color var(--transition-time) var(--transition-function);
+	transition: fill var(--timing-function) var(--transition-function);
 }
 
 .form-field-input {
@@ -679,12 +678,9 @@ img {
 	border-color: var(--back-ground-color);
 }
 
-.form-field-input:focus ~ .form-field__icon,
-.form-field-input:hover ~ .form-field__icon {
-	transition-duration: var(--timing-function);
-	transition-timing-function: var(--transition-function);
-	transition-property: fill;
-	fill: var(--back-ground-color);
+.form-field-input:focus ~ .form-field-icon,
+.form-field-input:hover ~ .form-field-icon {
+	fill: #212121;
 }
 
 .form-field-comment {
@@ -697,7 +693,7 @@ img {
 	border-color: var(--back-ground-color);
 }
 
-.form-field__comment::placeholder {
+.form-field-comment::placeholder {
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 1.14;
