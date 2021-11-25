@@ -11,7 +11,6 @@
 	--icon-border-color: #afb1b8;
 	--classes-background: rgba(47, 48, 58, 0.8);
 	--works-bgc: rgba(33, 150, 243, 0.9);
-	--button-color: #188ce8;
 	--transition-time: 250ms;
 	--transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -68,15 +67,15 @@ img {
 }
 /* Кнопки */
 .hero-button,
-.backdrop-btn-close,
-.form-modal-btn-submit {
-	cursor: pointer;
+.filter-button,
+.backdrop-btn-close {
 	margin: 0 auto;
 	text-align: center;
 	border-radius: 4px;
 	border: 0;
 	background-color: var(--back-ground-color);
 	color: var(--secondary-text-color);
+	cursor: pointer;
 }
 /* хэдер */
 .header {
@@ -130,7 +129,8 @@ img {
 .contacts-link {
 	display: flex;
 	align-items: center;
-	transition: var(--timing-function);
+	padding: 32px 0px;
+	transition: color var(--transition-time) var(--transition-function);
 }
 
 .menu .menu-item:not(:last-child) {
@@ -157,17 +157,19 @@ img {
 .filter-button {
 	text-align: center;
 	min-width: 73px;
-	background-color: var(--secondary-text-color);
+	background-color: var(--command-fon);
 	padding: 6px 22px;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.63;
 	letter-spacing: 0.03em;
+	color: var(--primary-text-color);
+	text-transform: none;
 	cursor: pointer;
 	border: none;
-	transition: background-color var(--transition-time) var(--transition-function),
+	transition: box-shadow var(--transition-time) var(--transition-function),
 		color var(--transition-time) var(--transition-function),
-		box-shadow var(--transition-time) var(--transition-function);
+		background-color var(--transition-time) var(--transition-function);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -175,11 +177,16 @@ img {
 	color: var(--secondary-text-color);
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
 		0px 2px 2px rgba(0, 0, 0, 0.12);
-	border-radius: 4px;
+}
+.filter-button-current {
+	background-color: var(--back-ground-color);
+	color: var(--secondary-text-color);
+	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+		0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* меню и навигация */
-.menu .menu-link {
+.menu-link {
 	display: block;
 	padding-top: 32px;
 	padding-bottom: 32px;
@@ -191,7 +198,7 @@ img {
 	transition: color var(--transition-time) var(--transition-function);
 }
 
-.contacts .contacts-link {
+.contacts-link {
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 1.14;
@@ -199,7 +206,7 @@ img {
 	color: var(--light-text-color);
 	transition: color var(--transition-time) var(--transition-function);
 }
-.menu .menu-link.current {
+.menu-link.current {
 	color: var(--back-ground-color);
 }
 .menu-link {
@@ -268,11 +275,12 @@ img {
 	letter-spacing: 0.06em;
 	background-color: var(--back-ground-color);
 	color: var(--secondary-text-color);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	transition: background-color var(--transition-time) var(--transition-function);
 }
 .hero-button:hover,
 .hero-button:focus {
-	background-color: var(--button-color);
+	background-color: #188ce8;
 }
 
 /* секция выгода */
@@ -344,7 +352,7 @@ img {
 	padding: 63px 24px;
 	background-color: var(--works-bgc);
 	transition: transform var(--transition-time) var(--transition-function),
-		visible var(--transition-time) var(--transition-function);
+		visibility var(--transition-time) var(--transition-function);
 }
 
 .works-selector {
@@ -481,28 +489,26 @@ img {
 	justify-content: center;
 	width: 100%;
 	height: 100%;
+	box-sizing: border-box;
+	cursor: pointer;
 	border: 1px solid var(--icon-border-color);
 	border-radius: 4px;
-	transition: fill var(--transition-time) var(--transition-function),
-		border var(--transition-time) var(--transition-function);
+	fill: var(--icon-border-color);
+	transition: border var(--transition-time) var(--transition-function);
 }
 
 .clients-link-icon {
-	fill: var(--icon-border-color);
 	width: 106px;
 	height: 60px;
+	transition: fill var(--transition-time) var(--transition-function);
 }
 
-.clients-link:focus .clients-link-icon,
-.clients-link:hover .clients-link-icon {
-	fill: var(--back-ground-color);
-	border-color: var(--back-ground-color);
-}
-
+.clients-link-icon:hover,
+.clients-link-icon:focus,
 .clients-link:hover,
-.clients-link:hover {
-	fill: var(--back-ground-color);
+.clients-link:focus {
 	border-color: var(--back-ground-color);
+	fill: var(--back-ground-color);
 }
 
 /* футер */
@@ -546,14 +552,14 @@ img {
 .join-title {
 	font-weight: 700;
 	font-size: 14px;
-	line-height: 1.14;
+	line-height: 16px;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
 	color: var(--secondary-text-color);
 	font-style: normal;
+
 	margin-bottom: 20px;
 }
-
 /* Соц.сети */
 .social {
 	justify-content: center;
@@ -567,9 +573,11 @@ img {
 	width: 44px;
 	height: 44px;
 	border-radius: 50%;
-	transition: fill var(--transition-time) var(--transition-function);
+	transition: background-color var(--transition-time) var(--transition-function);
 }
 .social-link-inversed {
+	background-color: rgba(255, 255, 255, 0.1);
+	fill: var(--secondary-text-color);
 	transition: background-color var(--transition-time) var(--transition-function);
 }
 
@@ -592,21 +600,20 @@ img {
 .social-item:not(:last-child) {
 	margin-right: 10px;
 }
+.social-icon {
+	transition: fill var(--transition-time) var(--transition-function);
+}
 /* Модальное окно */
-
 .backdrop {
+	opacity: 1;
 	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1;
 	width: 100%;
 	height: 100%;
-	overflow-y: scroll;
-	background-color: rgba(0, 0, 0, 0.2);
-	opacity: 1;
-	transition: opacity var(--timing-function) var(--transition-function);
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.2);
+	transition: opacity var(--transition-time) var(--transition-function);
 }
-
 .backdrop.is-hidden {
 	opacity: 0;
 	pointer-events: none;
@@ -625,212 +632,16 @@ img {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	background-color: var(--secondary-text-color);
 }
-
-.backdrop-modal {
+.modal {
 	position: absolute;
+	transition: transform;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
-	transition: transform var(--transition-time) var(--transition-function);
+	transform: translate(-50%, -50%) scale(1);
+	min-width: 528px;
+	min-height: 581px;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
 		0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
 	background-color: var(--secondary-text-color);
-}
-
-/* Стили формы модального окна */
-.form-modal {
-	padding: 40px;
-}
-
-.form-field {
-	position: relative;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 28px;
-}
-
-.form-field:last-of-type {
-	margin-bottom: 20px;
-}
-
-.form-field-input,
-.form-field-comment {
-	width: 100%;
-	border: 1px solid rgba(33, 33, 33, 0.2);
-	box-sizing: border-box;
-	border-radius: 4px;
-	cursor: pointer;
-	transition: border-color var(--transition-time) var(--transition-function);
-	transition: fill var(--transition-time) var(--transition-function);
-}
-
-.form-field-input {
-	height: 40px;
-	margin: 0px;
-	padding: 0px 0px 0px 42px;
-}
-
-.form-field-input:focus,
-.form-field-input:hover {
-	border-color: var(--back-ground-color);
-}
-
-.form-field-input:focus ~ .form-field-icon,
-.form-field-input:hover ~ .form-field-icon {
-	fill: #212121;
-}
-
-.form-field-comment {
-	max-height: 120px;
-	padding: 12px 16px;
-}
-
-.form-field-comment:focus,
-.form-field-comment:hover {
-	border-color: var(--back-ground-color);
-}
-
-.form-field-comment::placeholder {
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.01em;
-	text-transform: none;
-	color: rgba(117, 117, 117, 0.5);
-}
-
-.form-field-label {
-	position: absolute;
-	top: -18px;
-	left: 0;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 1.16667;
-	letter-spacing: 0.01em;
-	text-transform: none;
-	color: var(--light-text-color);
-}
-
-.form-field-icon {
-	position: absolute;
-	top: 50%;
-	left: 12px;
-	transform: translateY(-50%);
-}
-
-.form-modal-title {
-	display: block;
-	margin-bottom: 30px;
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 1.15;
-	letter-spacing: 0.03em;
-	text-transform: none;
-	text-align: center;
-	color: var(--primary-text-color);
-}
-
-.checkbox-label {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	margin-bottom: 30px;
-}
-
-.checkbox-label:focus ~ .checkbox-label-icon,
-.checkbox-label:hover ~ .checkbox-label-icon {
-	transition-duration: var(--transition-time);
-	transition-timing-function: var(--transition-function);
-	transition-property: fill;
-	fill: var(--back-ground-color);
-}
-
-.checkbox-label-input {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	overflow: hidden;
-	border: 0;
-	clip: rect(0 0 0 0);
-}
-
-.checkbox-label-input:checked + .checkbox-label-icon,
-.checkbox-label-input:hover + .checkbox-label-icon,
-.checkbox-label-input:focus + .checkbox-label-icon {
-	border-radius: 2px;
-	background-image: url("../images/check.svg");
-	background-size: contain;
-	background-color: var(--back-ground-color);
-	fill: var(--back-ground-color);
-}
-
-.checkbox-label-icon {
-	display: inline-block;
-	width: 16px;
-	height: 15px;
-	margin-right: 9px;
-	transition: fill var(--timing-function) var(--transition-function);
-	transition: background-color var(--transition-time) var(--transition-function);
-}
-.checkbox-label-text {
-	color: var(--light-text-color);
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 1.71;
-
-	letter-spacing: 0.03em;
-}
-.checkbox-label-link {
-	color: var(--back-ground-color);
-}
-
-/* Стили кнопок форм */
-/* Кнопка закрытия модального окна */
-.backdrop-btn-close {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	top: 8px;
-	right: 8px;
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	box-sizing: border-box;
-	background-color: var(--secondary-text-color);
-	transition: fill var(--timing-function) var(--transition-function);
-}
-
-.backdrop-btn-close:hover,
-.backdrop-btn-close:focus {
-	fill: var(--button-color);
-}
-
-.form-modal-btn-submit {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 1.875;
-	letter-spacing: 0.06em;
-	text-transform: none;
-	margin: auto;
-	padding: 10px 55px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-	border: none;
-	border-radius: 4px;
-	transition: background-color var(--timing-function) var(--transition-function);
-}
-
-.form-modal-btn-submit:hover,
-.form-modal-btn-submit:focus {
-	background-color: var(--button-color);
 }
