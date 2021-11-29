@@ -734,6 +734,7 @@ img {
 	color: var(--back-ground-color);
 	cursor: pointer;
 	margin: 0;
+	text-decoration: underline;
 }
 .form-main-input {
 	margin-top: 12px;
