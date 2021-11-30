@@ -706,6 +706,7 @@ img {
 } 
 
 .form-input {
+	outline: none;
 	transition: border-color var(--transition-time) var(--transition-function);
 }
 
