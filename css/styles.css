@@ -11,7 +11,7 @@
 	--icon-border-color: #afb1b8;
 	--classes-background: rgba(47, 48, 58, 0.8);
 	--works-bgc: rgba(33, 150, 243, 0.9);
-	--transition-time: 900ms;
+	--transition-time: 250ms;
 	--transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
@@ -706,13 +706,19 @@ img {
 } 
 
 .form-input {
-	border-color: var(--back-ground-color);
+	transition: border-color var(--transition-time) var(--transition-function);
 }
 
 .form-input:hover + .form-icon,
 .form-input:focus + .form-icon{
 	fill: var(--back-ground-color);
+	
 }
+.form-input:hover,
+.form-input:focus {
+	border-color: var(--back-ground-color);
+}
+
 .textarea::placeholder {
 	font-weight: 400;
 	font-size: 12px;
