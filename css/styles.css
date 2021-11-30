@@ -601,10 +601,8 @@ img {
 .social-item:not(:last-child) {
 	margin-right: 10px;
 }
-.social-icon {
 
-	transition: fill var(--transition-time) var(--transition-function);
-}
+
 /* Модальное окно */
 .backdrop {
 	opacity: 1;
@@ -674,6 +672,7 @@ img {
 .form-field {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 .form-label {
 	
@@ -688,10 +687,8 @@ img {
 } 
 .form-field input {
 	margin: 0;
-	padding: 0;
+	padding: 12px 42px;
 	height: 40px;
-	padding-top: 11px;
-	padding-bottom: 11px;
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	box-sizing: border-box;
 	border-radius: 4px;
@@ -703,18 +700,18 @@ img {
 
  .form-icon {
 	position: absolute;
-	top: left;
+	top: 30px;
+	left: 15px;
+	transition: fill var(--transition-time) var(--transition-function);
 } 
 
-.form-input + .form-icon:hover,
-.form-input + .form-icon:focus 
-{
-	fill: var(--back-ground-color);
+.form-input {
+	border-color: var(--back-ground-color);
 }
 
-.form-input:hover,
-.form-input:focus {
-	border-color: var(--back-ground-color);
+.form-input:hover + .form-icon,
+.form-input:focus + .form-icon{
+	fill: var(--back-ground-color);
 }
 .textarea::placeholder {
 	font-weight: 400;
@@ -742,7 +739,14 @@ img {
 	align-items: center;
 	justify-content: center;
 }
-
+/* .checkbox:checked + .checkbox-label-text {
+	background-color: #1d78af;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-color: #1d78af;
+	background-origin: border-box;
+	background-image: url(../images/agreement-ok.svg);;
+} */
 .checkbox-label-text {
 	margin: 0;
 	font-size: 14px;
@@ -782,4 +786,3 @@ img {
 .submit-button:focus {
 	background-color: #188ce8;
 }
-/*  */
