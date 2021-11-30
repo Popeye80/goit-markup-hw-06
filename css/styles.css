@@ -602,6 +602,7 @@ img {
 	margin-right: 10px;
 }
 .social-icon {
+
 	transition: fill var(--transition-time) var(--transition-function);
 }
 /* Модальное окно */
@@ -675,6 +676,7 @@ img {
 	flex-direction: column;
 }
 .form-label {
+	position: relative;
 	font-size: 12px;
 	line-height: 1.16;
 	letter-spacing: 0.01em;
@@ -694,9 +696,10 @@ img {
 .form-field label {
 	margin-bottom: 4px;
 }
-/* .form-a {
-	display: flex;
-} */
+.form-icon {
+	position: absolute;
+	
+}
 
 .form-input:hover,
 .form-input:focus {
