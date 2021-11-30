@@ -684,11 +684,10 @@ img {
 }
 .form-input {
 	position: relative;
-	top: left;
+	/* top: right; */
 	transition: border-color var(--transition-time) var(--transition-function);
-}
+} 
 .form-field input {
-	
 	margin: 0;
 	padding: 0;
 	height: 40px;
@@ -702,14 +701,12 @@ img {
 .form-field label {
 	margin-bottom: 4px;
 }
-.form-icon {
+
+ .form-icon {
 	position: absolute;
-	transition: fill var(--transition-time) var(--transition-function);
-}
-.form-icon:hover,
-.form-icon {
-fill:var(--back-ground-color)
-}
+	top: left;
+} 
+
 .form-input + .form-icon:hover,
 .form-input + .form-icon:focus 
 {
