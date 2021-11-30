@@ -663,7 +663,7 @@ img {
 }
 /* Форма */
 .form {
-	width: 528px;
+	min-width: 528px;
 	margin-left: auto;
 	nav-right: auto;
 	padding: 0 40px 40px;
@@ -741,19 +741,19 @@ img {
 .textarea:focus {
 	border-color: var(--back-ground-color);
 }
-.checkbox {
+/* .checkbox {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-/* .checkbox:checked + .checkbox-label-text {
+ .checkbox:checked + .checkbox-label-text {
 	background-color: #1d78af;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-color: #1d78af;
 	background-origin: border-box;
-	background-image: url(../images/agreement-ok.svg);;
-} */
+	background-image: url(../images/agreement-ok.svg);
+} 
 .checkbox-label-text {
 	margin: 0;
 	font-size: 14px;
@@ -767,7 +767,59 @@ img {
 	cursor: pointer;
 	margin: 0;
 	text-decoration: underline;
-}
+} */
+
+
+.checkbox-label {
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	margin-bottom: 30px;
+  }
+  
+  .checkbox-label:focus + .checkbox-label__icon,
+  .checkbox-label:hover + .checkbox-label__icon {
+	transition: fill var(--transition-time) var(--transition-function);
+  }
+  
+  .checkbox-label__input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0; 
+	overflow: hidden;
+	border: 0;
+	clip: rect(0 0 0 0);
+  }
+  
+  .checkbox-label__input:checked + .checkbox-label__icon,
+  .checkbox-label__input:hover + .checkbox-label__icon,
+  .checkbox-label__input:focus + .checkbox-label__icon {
+	border-radius: 2px;
+	background-image: url(../images/agreement-ok.svg);
+	background-size: contain;
+	background-color: #2196f3;
+	fill: #2196f3;
+	
+  }
+  
+  .checkbox-label__icon {
+	display: inline-block;
+	width: 16px;
+	height: 15px;
+	margin-right: 7px;
+	transition: fill var(--transition-time) var(--transition-function),
+	background-color var(--transition-time) var(--transition-function);
+  }
+  
+  .checkbox-label__link {
+	color: #2196f3;
+	text-decoration: underline;
+  }
+
 .form-main-input {
 	margin-top: 12px;
 	margin-bottom: 20px;
