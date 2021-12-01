@@ -11,7 +11,7 @@
 	--icon-border-color: #afb1b8;
 	--classes-background: rgba(47, 48, 58, 0.8);
 	--works-bgc: rgba(33, 150, 243, 0.9);
-	--transition-time: 900ms;
+	--transition-time: 250ms;
 	--transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
@@ -791,7 +791,7 @@ img {
 	transition: fill var(--transition-time) var(--transition-function);
   }
   
-  .checkbox-label-input {
+  /* .checkbox-label-input {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -800,20 +800,24 @@ img {
 	overflow: hidden;
 	border: 0;
 	clip: rect(0 0 0 0);
-  }
+  } */
   
   .checkbox-label-input:checked + .checkbox-label-icon,
   .checkbox-label-input:hover + .checkbox-label-icon,
   .checkbox-label-input:focus + .checkbox-label-icon {
 	border-radius: 2px;
-	background-image: url(../images/agreement-ok.svg);
+	background-image: url(../images/icon-check.svg);
 	background-size: contain;
 	background-color: var(--back-ground-color);
 	fill: var(--back-ground-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	
   }
   
   .checkbox-label-icon {
+
 	display: inline-block;
 	width: 16px;
 	height: 15px;
@@ -900,4 +904,7 @@ img {
   .subscribe-icon {
 	margin-left: 10px;
   }
+  
+
+
   
