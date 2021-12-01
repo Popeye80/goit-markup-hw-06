@@ -69,7 +69,8 @@ img {
 .hero-button,
 .filter-button,
 .backdrop-btn-close,
-.submit-button {
+.submit-button,
+.subscribe-button {
 	margin: 0 auto;
 	text-align: center;
 	border-radius: 4px;
@@ -543,6 +544,7 @@ img {
 }
 .footer-main {
 	display: flex;
+	align-items: baseline;
 }
 /* присоединяйтесь */
 
@@ -550,7 +552,8 @@ img {
 	display: flex;
 	align-items: baseline;
 }
-.join-title {
+.join-title,
+.subscribe-title {
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 16px;
@@ -744,7 +747,7 @@ img {
 .textarea:focus {
 	border-color: var(--back-ground-color);
 }
-/* .checkbox {
+ .checkbox {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -770,7 +773,7 @@ img {
 	cursor: pointer;
 	margin: 0;
 	text-decoration: underline;
-} */
+} 
 
 
 .checkbox-label {
@@ -780,6 +783,7 @@ img {
 	align-items: center;
 	cursor: pointer;
 	margin-bottom: 30px;
+	
   }
   
   .checkbox-label:focus + .checkbox-label-icon,
@@ -827,7 +831,8 @@ img {
 	margin-top: 12px;
 	margin-bottom: 20px;
 }
-.submit-button {
+.submit-button,
+.subscribe-button {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -845,6 +850,54 @@ img {
 	transition: background-color var(--transition-time) var(--transition-function);
 }
 .submit-button:hover,
-.submit-button:focus {
+.submit-button:focus,
+.subscribe-button:hover,
+.subscribe-button:focus {
 	background-color: #188ce8;
 }
+/* Сабскрайб */
+ .subscribe {
+	display: flex;
+	align-items: flex-end;
+	margin-left: auto;
+  	
+  } 
+  
+  .subscribe-email {
+	display: flex;
+	flex-direction: column;
+	margin-right: 12px;
+  }
+  
+  .subscribe-input {
+	min-width: 358px;
+	height: 50px;
+	margin-top: 20px;
+	padding-left: 16px;
+  	font-size: 16px;
+	line-height: 1.25;
+	letter-spacing: 0.03em;
+	color: rgba(255, 255, 255, 0.6);
+  	background-color: var(--hero-color);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+  	transition: border-color var(--transition-time)
+	  var(--transition-function);
+  }
+  
+  .subscribe-input:focus {
+	border: 1px solid var(--back-ground-color);
+	outline: 0;
+  }
+  
+  .subscribe-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .subscribe-icon {
+	margin-left: 10px;
+  }
+  
